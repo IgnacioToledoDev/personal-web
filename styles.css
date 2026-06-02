@@ -209,6 +209,7 @@ body.no-liga {
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
 
 .tweaks-btn {
+  display: none;
   font-family: inherit;
   font-size: 11px;
   color: var(--fg-dim);
