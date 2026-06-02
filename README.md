@@ -28,58 +28,40 @@ Personal portfolio site with a terminal / CRT aesthetic — built with React (CD
 | Transpilation | Babel Standalone |
 | Styling | Vanilla CSS + CSS variables |
 | Fonts | Fira Code (Google Fonts) |
-| Server (optional) | Express / any static server |
+| Server | Express 5 |
 
 ## Getting Started
 
-### Option 1 — Python (no dependencies)
+### Node.js + Express (recommended)
 
 ```bash
 git clone https://github.com/IgnacioToledoDev/personal-web.git
 cd personal-web
+npm install
+npm start
+# → http://localhost:3000
+```
+
+For development with auto-restart:
+
+```bash
+npm run dev
+```
+
+Set a custom port via env var:
+
+```bash
+PORT=8080 npm start
+```
+
+### Without Node.js
+
+```bash
+# Python
 python -m http.server 3000
-# → http://localhost:3000
-```
 
-### Option 2 — Node.js + Express
-
-```bash
-git clone https://github.com/IgnacioToledoDev/personal-web.git
-cd personal-web
-npm init -y
-npm install express
-```
-
-Create `server.js`:
-
-```js
-const express = require('express');
-const path = require('path');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.static(path.join(__dirname)));
-
-app.listen(PORT, () => {
-  console.log(`nocti.dev running → http://localhost:${PORT}`);
-});
-```
-
-Then run:
-
-```bash
-node server.js
-# → http://localhost:3000
-```
-
-### Option 3 — Any static file server
-
-```bash
-# npx serve
+# npx
 npx serve .
-
-# VS Code Live Server, Caddy, Nginx — anything that serves static files works
 ```
 
 ## Customization
@@ -114,6 +96,8 @@ Remove any class to disable that specific effect.
 
 ```
 personal-web/
+├── server.js         # Express server — serves static files on PORT (default 3000)
+├── package.json      # npm scripts: start, dev
 ├── index.html        # Entry point — loads CDN scripts, sets theme
 ├── data.js           # All site content (edit this)
 ├── styles.css        # CRT effects, themes, layout
