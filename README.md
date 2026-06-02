@@ -32,7 +32,7 @@ Personal portfolio site with a terminal / CRT aesthetic — built with React (CD
 
 ## Getting Started
 
-### Node.js + Express (recommended)
+### Node.js + Express
 
 ```bash
 git clone https://github.com/IgnacioToledoDev/personal-web.git
@@ -54,15 +54,6 @@ Set a custom port via env var:
 PORT=8080 npm start
 ```
 
-### Without Node.js
-
-```bash
-# Python
-python -m http.server 3000
-
-# npx
-npx serve .
-```
 
 ## Customization
 
